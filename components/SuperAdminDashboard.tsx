@@ -47,7 +47,7 @@ export const SuperAdminDashboard: React.FC<SuperAdminDashboardProps> = ({ users,
       const baseMessage = `Halo ${newUser.name}, akun SIMPANSE Anda aktif. Login: ${newUser.username} / Pass: ${newUser.password}`;
 
       try {
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
         const response = await ai.models.generateContent({
           model: 'gemini-3-flash-preview',
           contents: `Buat draf email aktivasi sistem formal: Penerima: ${newUser.name}. Info: "${baseMessage}". Fasilitas: ${facilities}. Instansi: KGTK Maluku Utara.`,
