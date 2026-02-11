@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { UserRole, UserAccount } from '../types';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai';
 
 interface SuperAdminDashboardProps {
   users: UserAccount[];
